@@ -1,7 +1,7 @@
 ---
 title: "Facial Recognition"
 author: "Andrea R Seisler"
-date: "2/20/2020"
+date: "`r Sys.time()`"
 output: 
   html_document:
     toc: true
@@ -11,24 +11,109 @@ output:
 
 # Coding [Facial Recognition](facial-recognition.Rmd)
 
-# Use this as a template to create BehAV coding paramaters 
-# Coding will be completed using [Datavyu](http://datavyu.org/)
+Coding will be completed using [Datavyu](http://datavyu.org/)
 
-## `mom_head`
+## momhead
 
-`<loc_l-f-h-c>`
+`<momhead-m>`
 
 ### General Orientation
 
-This code captures the times that the baby is engaged in self-generated locomotion in any form (i.e., bum shuffling, scooting, belly crawling, hands-knees crawling, cruising, supported walking, independent walking, etc.). 
-Also included in this pass are the times when locomotion cannot occur because the baby is held,  and the times baby is constrained in baby furniture (e.g., a belted chair, highchair, or stroller).
-Coders score only instances of baby-generated locomotion, and instances of falling, being held, or being constrained. 
-Coders do not score instances where baby is stationary but could have locomoted. 
-Bouts of locomotion are scored as events, where the gray spaces between cells mean the baby is stationary but not held and not constrained.
+This code captures the times that the mom head or any part of the head is in the video frame. 
+Times when the head is in view are scored as events, where the gray spaces between cells mean the head is out of view.
 
-Coders are watching/tagging the duration of each of these events (locomotion, falls, held, constrained) by marking onset/offset times. 
-To determine locomotion, coders are watching for steps with the feet, the knees, or the bum. 
-Any other movements that are not initiated from these three body locations are considered to be a transition between postures and are subsumed by stationary, because it is not locomotion.
+Coders are watching/tagging each of these events by marking onset/offset times for the duration of time the mom head is within the viewing frame.
+
+### Value List
+
+`m` = mom head in video
+
+### Operational Definitions
+
+`<m>` Code "m" when any part of the mom head is in the video frame
+
+### How to Code
+
+Set “JUMP-BACK-BY” key to 1 s.
+
+Enable cell highlighting on the controller.
+
+Watch in real time for the mom's movement. As soon as you see mom's head in the frame; hit #5-STOP and then hit “JUMP-BACK-BY” to go back to the timestamp that is just before the mom's head appears in the frame. 
+
+Hit ENTER to create a new cell at this Onset.
+
+Now, watch in real time to see when the mom head is out of the frame. 
+The Offset is when the mom head is out of the frame least 0.5 s
+
+To set the Offset, use the same rules for mechanics as with the Onset. 
+Hit #5-STOP and then hit “JUMP-BACK-BY” to go back to the timestamp that is just before the head exits the frame. 
+Then JOG forward by hitting #3-JOGFORWARD until you reach the Offset of that cell. 
+If you go too far, you can JOG backward by hitting #1-JOGBACK. 
+You will likely have to hit the JOG keys numerous times. 
+If you feel that you have either jumped too far back or went too far forward, hold the JOG keys to move in either direction a bit faster.
+
+Hit ???? to create the Offset
+
+### Create momangle column
+
+run the ??? script to create a new column for momangle
+
+
+## babyhead
+
+`<babyhead-b>`
+
+### General Orientation
+
+This code captures the times that the baby head or any part of the head is in the video frame. 
+
+Times when the head is in view are scored as events, where the gray spaces between cells mean the head is out of view.
+
+Coders are watching/tagging each of these events by marking onset/offset times for the duration of time the mom head is within the viewing frame.
+
+### Value List
+
+`b` = baby head in video
+
+### Operational Definitions
+
+`<b>` Code "b" when any part of the baby head is in the video frame
+
+### How to Code
+
+Set “JUMP-BACK-BY” key to 1 s.
+
+Enable cell highlighting on the controller.
+
+Watch in real time for the baby's movement. As soon as you see baby's head in the frame; hit #5-STOP and then hit “JUMP-BACK-BY” to go back to the timestamp that is just before the baby's head appears in the frame. 
+
+Hit ENTER to create a new cell at this Onset.
+
+Now, watch in real time to see when the baby head is out of the frame. 
+The Offset is when the baby head is out of the frame least 0.5 s
+
+To set the Offset, use the same rules for mechanics as with the Onset. 
+Hit #5-STOP and then hit “JUMP-BACK-BY” to go back to the timestamp that is just before the head exits the frame. 
+Then JOG forward by hitting #3-JOGFORWARD until you reach the Offset of that cell. 
+If you go too far, you can JOG backward by hitting #1-JOGBACK. 
+You will likely have to hit the JOG keys numerous times. 
+If you feel that you have either jumped too far back or went too far forward, hold the JOG keys to move in either direction a bit faster.
+
+Hit ???? to create the Offset
+
+### Create babyangle column
+
+run the ??? script to create a new column for babyangle
+
+## momangle
+
+`<momangle_f-s-o-u-d-b>`
+
+### General Orientation
+
+This code captures the viewing angle of the face (front, side, oblique, up, down, back) of the mom.
+
+Coders are watching/tagging each of these events by marking onset/offset times for the duration of head angle.
 
 ### Value List
 
@@ -44,24 +129,82 @@ Any other movements that are not initiated from these three body locations are c
 
 `b` = back
 
+### Operational Definitions
+
+`<f>` Code “f” for a front view of the face, when mom or baby has 2 eyes, nose, mouth in view
+
+`<s>` Code "s" for a side view of the face, when mom or baby shows one eye, profile of nose, one ear. 1 hemisphere of head. 
+
+`<o>` Code "o" for an oblique view of the face, when mom or baby has one ear (may be obscured by hair), one full eye, one partial eye (this is between side view and front view, ~3/4 face)
+
+`<u>` Code "u" for looking up view of the face, when mom or baby shows the jaw line, underneath of nose, partial eyes
+
+`<d>` Code "d" for looking down view of the face, when mom or baby shows forehead, hairline, eyebrows, bridge of nose, Maybe not whole nose
+
+`<b>` Code "b" for back of head view, when mom or baby head is in the frame, but shows no facial features (eye, nose, lip) maybe ear only
+
+### How to Code
+
+Set “JUMP-BACK-BY” key to 1 s.
+
+Enable cell highlighting.
+
+Watch in real time for the mom's movement.
+
+Watch mom's head.
+
+## babyangle
+
+`<babyangle_f-s-o-u-d-b>`
+
+### General Orientation
+
+This code captures the viewing angle of the face (front, side, oblique, up, down, back) of the baby. 
+
+Coders are watching/tagging each of these events by marking onset/offset times for the duration of head angle.
+
+### Value List
+
+`f` = front
+
+`s` = side profile
+
+`o` = oblique
+
+`u` = up
+
+`d` = down
+
+`b` = back
 
 ### Operational Definitions
 
-`<f>`
-Code “f” when mom or baby has 2 eyes, nose, mouth in view
+`<f>` Code “f” for a front view of the face, when mom or baby has 2 eyes, nose, mouth in view
 
-`<s>`Code 's' of the mom or baby shows one eye, profile of nose, one ear. 1 hemisphere of head. 
+`<s>` Code "s" for a side view of the face, when mom or baby shows one eye, profile of nose, one ear. 1 hemisphere of head. 
 
-`<o>` one ear, one full eye, one partial eye (this is between side view and front view ~3/4 face
+`<o>` Code "o" for an oblique view of the face, when mom or baby has one ear (may be obscured by hair), one full eye, one partial eye (this is between side view and front view, ~3/4 face)
 
-'<u>` jaw line, underneath of nose 
+`<u>` Code "u" for looking up view of the face, when mom or baby shows the jaw line, underneath of nose, partial eyes
 
-`<d>` forehead, hairline, eyebrows, bridge of nose, Maybe not whole nose
+`<d>` Code "d" for looking down view of the face, when mom or baby shows forehead, hairline, eyebrows, bridge of nose, Maybe not whole nose
 
-`<b>` no facial features (eye, nose, lip) maybe ear only
-
+`<b>` Code "b" for back of head view, when mom or baby head is in the frame, but shows no facial features (eye, nose, lip) maybe ear only
 
 ### How to Code
+
+Set “JUMP-BACK-BY” key to 1 s.
+
+Enable cell highlighting.
+
+Watch in real time for the baby's movement.
+
+Watch baby's head.
+
+
+
+
+# Delete from here to end
 
 Set “JUMP-BACK-BY” key to 1 s.
 
@@ -86,9 +229,9 @@ Then JOG forward by hitting #3-JOGFORWARD until you reach the Offset of that cel
 If you go to far, you can JOG backward by hitting #1-JOGBACK. You will likely have to hit the JOG keys numerous times. 
 If you feel that you have either jumped too far back or went too far forward, hold the JOG buttons to move in either direction a bit faster.
 
-## `momloc`
+## Delete from here down
 
-`<loc_l-f>`
+`<babyhead_b>`
 
 ### General Orientation
 
@@ -103,32 +246,6 @@ Any other movements that are not initiated from these three body locations is co
 
 Bouts that are coded as “.” means that mom is off camera or her legs are off camera, and coder cannot see or infer whether mom is stationary or moving.
 
-### Value List
-
-`l` = locomotion
-
-`f` = fall
-
-`.` = when mother is off camera and coder cannot determine whether mom is moving or stationary
-
-### Operational Definitions
-
-`<l>`
-Code 'l' when the mom is engaged in locomotion of any form (i.e., walking, scooting, knee-walking, crawling). 
-
-If you're not sure whether the mom is moving or stationary (e.g., occlusion behind furniture or unclear video footage), then this is missing data and the offset of the locomotion bout should be set to the last frame where you can see mom.
-
-The subsequent cell (where you cannot see anything or make an inference about movement) should be coded as “.” until you can see mom again.
-
-However, if you can infer that mom is moving or stationary (i.e., head is bobbing, shadow of the leg moving is visible, etc.) then include it in the same bout of locomotion, following the rules for pauses above.
-
-`<f>`
-
-Code 'f' if the mom loses control over her body (i.e., balance) and cannot recover on her own before the body (bum, hands, torso) hits the ground. 
-
-All falls count. They can happen while upright, on/off furniture or other elevation, while sitting, or while engaged in locomotion.
-
-From an upright or squatting position: a loss of balance results in the hands, knees, or a toy in the hands hitting the ground.
 
 ### How to Code
 
