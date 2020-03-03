@@ -14,7 +14,7 @@ output:
 # Use this as a template to create BehAV coding paramaters 
 # Coding will be completed using [Datavyu](http://datavyu.org/)
 
-## `babyloc`
+## `mom_head`
 
 `<loc_l-f-h-c>`
 
@@ -32,99 +32,34 @@ Any other movements that are not initiated from these three body locations are c
 
 ### Value List
 
-`l` = locomotion
+`f` = front
 
-`f` = fall
+`s` = side profile
 
-`m` = mother constraining baby locomotion
+`o` = oblique
 
-`d` = device constraining baby locomotion (high chair, stroller, carseat, etc.)
+`u` = up
 
-`.` = when baby is off camera or the baby's feet/knees/bum are off camera and coder cannot see or infer whether the baby is locomoting.
+`d` = down
+
+`b` = back
+
 
 ### Operational Definitions
 
-`<l>`
-Code “l” when the baby is engaged in self-generated locomotion in any form (i.e., bum shuffling, scooting, belly crawling, hands-knees crawling, climbing, cruising, supported walking, independent walking, etc.) 
-
-This code counts locomotion regardless of whether the baby maintains balance independently or the baby's balance is supported by a parent or external object/apparatus.
-Any self-generated locomotion on a moving toy or baby furniture (e.g., a bicycle or bottomless car that the baby moves with their legs) counts as locomotion.
-
-Locomotion occurs when the entire body is displaced in any direction—forward, sideways, backward, in-place—space because the baby is taking a “step”.
-A baby takes a “step” by shifting weight from one foot/knee onto the other (i.e., weight must be shifting onto a swinging foot in the air to count as moving; if not, this is stationary).
-
-Onset of a “step” is when the whole foot/knee comes up off the ground. 
-A step can also happen if the foot doesn't come off the ground, but the foot has to slide forward, backward or sideways. 
-Marching in place, jumping, and hopping also count as locomotion. 
-Offset is the frame when the baby takes the last step (with foot/knee) to pause in place (in the same posture such as walking to standing) or to transition to another stationary posture (e.g., upright walking to sitting). 
-A pause must last at least 0.5 s.
-
-Do not include any movement with foot/knee as part of a transition to another posture (e.g., sit to upright/walk). 
-The first walking/crawling step will be when the foot/knee moves forward in any direction. 
-The final step in the bout has to be a real walking/crawling step (i.e., it is not the last half step or little attempt-step that looks like a transition into the sit). 
-For example, if the baby transitions from sitting to crawling; the first step is after the transition ends and the last step is just before another transition begins.
-
-If the feet/knees/bum are outside the camera view, code the locomotion bout if you can see the body moving and/or can infer that the baby is moving. 
-If you are unsure as to whether the baby is moving or stationary (e.g., occlusion behind furniture or unclear video footage), then this bout should be coded as missing “.”, where the offset of the previous locomotion bout (just before the video occlusion or lack or view) should be set to the last frame where you can no longer see/infer the baby's movement.
-
 `<f>`
+Code “f” when mom or baby has 2 eyes, nose, mouth in view
 
-Code 'f' if the baby loses control over his/her body (i.e., balance) and cannot recover on his/her own before his/her body hits the ground.
+`<s>`Code 's' of the mom or baby shows one eye, profile of nose, one ear. 1 hemisphere of head. 
 
-All falls count. 
-They can happen while upright, on/off furniture or other elevation, while sitting, or while engaged in locomotion. 
-Falls can happen while the mom is holding the baby's hand or while the baby is holding onto furniture or another support. 
+`<o>` one ear, one full eye, one partial eye (this is between side view and front view ~3/4 face
 
-Onset is frame when baby first begins to lose balance and Offset when baby's body (as defined below) hits the floor.
+'<u>` jaw line, underneath of nose 
 
-From an upright or squatting position: a loss of balance results in the hands, knees, or a toy in the hands hitting the ground; baby's bum hitting the ground; or head hitting the ground.
+`<d>` forehead, hairline, eyebrows, bridge of nose, Maybe not whole nose
 
-From a crawling position: a loss of balance results in the face, head, chest, or side of torso hitting the ground.
+`<b>` no facial features (eye, nose, lip) maybe ear only
 
-From a sitting position: a loss of balance results in the head, chest, side of torso, or back hitting the ground.
-
-A loss of balance must occur before any of the body parts hit the ground. 
-The baby must be out of his/her own control. 
-Sometimes babies will actively let themselves lose control (e.g., plopping down into a sit, where they let themselves fall down into a sitting position). 
-That is not a loss of balance but IS a loss of control and should count as a fall.
-
-If the baby loses balance, but catches him/herself before the above body parts hit the ground, do not count as a fall.
-
-Parent involved falls would only be coded as a fall if the parent catches the baby after the baby loses balance, effectively supporting the baby's entire weight. 
-In this scenario, the baby would have fallen if not for parent rescue (i.e., the body part would have hit the ground). Parents must catch after the baby has begun to lose balance. 
-If the parent was already supporting the baby's weight before a loss of balance, but baby's body parts (e.g., hands, head, butt, etc.) do not touch the ground, then this is not a fall (it is supported walking).
-
-`<m>`
-
-Code 'm' when the baby is being constrained and supported by the mother. 
-The baby's feet are not on the ground and is being held in the air by the mother. 
-The mother's arms are supplying support to the baby's body by touching their torso. 
-Do not count mother constraint when the baby is just sitting on the mother's lap. 
-During a mother constraint, the parent can be moving (carrying) or stationary (holding). 
-
-Onset of hold is the last frame before the baby's second foot (or bum if child was sitting, torso if child was laying down, second knee if crawling or knee walking) lifts up off the current surface and up into the air in mom's arms.
-
-Offset of hold is when both feet touch the ground (or bum if mom places child in sitting, torso if mom places child laying down, both knees if mom places child in crawling or knee walking), and the baby starts supporting own weight in any posture.
-
-When mom is putting the baby back down, the onset for the immediate subsequent locomotion bout (if it happens) is when the second foot, hand, or knee touches the floor.
-
-`<d>`
-
-Code 'd' if the baby is constrained in a device that restricts movement (e.g., a highchair, stroller, carseat, etc.). 
-Device is not a couch, bed, or changing table unless there’s a strap, belt, or cord holding baby down. 
-Device can never be household furniture not intended for children. Wooden or plastic child chair is not a device without straps.
-
-Baby walker is not a device. 
-This would count as supported walking because that’s the whole point of a baby walker. 
-Jolly jumper counts as a constrained device even though the baby is moving or jumping around.
-
-Mom-constraint and device-constraint are likely to be continuous. 
-Mom-constraint ends as she puts baby into device. 
-Mom takes baby out of device is device-constraint transitioning into mom-constraint.
-
-Onset of constrained is when the baby's butt first touches the restrictive device.
-
-Offset of constrained is when the butt leaves the device as the parent starts to take the baby out (usually by lifting them out).
 
 ### How to Code
 
