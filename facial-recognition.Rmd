@@ -34,6 +34,9 @@ Coders are watching/tagging each of these events by marking onset/offset times f
 
 ### How to Code
 
+Quick coding of head in view.
+Then create script for frame by frame.
+
 Set “JUMP-BACK-BY” key to 1 s.
 
 Enable cell highlighting on the controller.
@@ -52,7 +55,7 @@ If you go too far, you can JOG backward by hitting #1-JOGBACK.
 You will likely have to hit the JOG keys numerous times. 
 If you feel that you have either jumped too far back or went too far forward, hold the JOG keys to move in either direction a bit faster.
 
-Hit ???? to create the Offset
+Hit #9-SET-OFFSET to create the Offset
 
 ### Create momangle column
 
