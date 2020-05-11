@@ -35,7 +35,6 @@ Coders are watching/tagging each of these events by marking onset/offset times f
 ### How to Code
 
 Quick coding of head in view.
-Then create script for frame by frame.
 
 Set “JUMP-BACK-BY” key to 1 s.
 
@@ -59,8 +58,19 @@ Hit #9-SET-OFFSET to create the Offset
 
 ### Create momangle column
 
-run the ??? script to create a new column for momangle
+select the first block in the MomHead column
+select snap region
+- this will allow you to code in the MomAngle column just during the MomHead sections
 
+For the first cell in the column 
+- Highlight the 'MomAngle' heading
+- create a new cell by pressing 'Enter' on the number pad
+
+- code for <fso>, <ud>
+- press #3 to jog one frame
+- press #0 to create new cell/set previous offset
+
+Contine the above process until the 'Snap region' section has been coded.
 
 ## babyhead
 
@@ -119,6 +129,9 @@ This code captures the viewing angle of the face (front, side, oblique, up, down
 Coders are watching/tagging each of these events by marking onset/offset times for the duration of head angle.
 
 ### Value List
+https://www.researchgate.net/figure/The-head-pose-rotation-angles-Yaw-is-the-rotation-around-the-Y-axis-Pitch-around-the_fig1_281587953
+
+L/R values (rotation about y-axis - Yaw)
 
 `f` = front
 
@@ -126,7 +139,12 @@ Coders are watching/tagging each of these events by marking onset/offset times f
 
 `o` = oblique
 
+
+U/D values (rotation about x-axis - Pitch)
+
 `u` = up
+
+`s` = straight on
 
 `d` = down
 
