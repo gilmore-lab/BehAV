@@ -1511,7 +1511,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Facial Recognition</h1>
 <h4 class="author">Andrea R Seisler</h4>
-<h4 class="date">2020-05-08 13:18:12</h4>
+<h4 class="date">2020-05-19 13:19:26</h4>
 
 </div>
 
@@ -1520,8 +1520,8 @@ div.tocify {
 <h1>Coding <a href="facial-recognition.Rmd">Facial Recognition</a></h1>
 <p>Coding will be completed using <a href="http://datavyu.org/">Datavyu</a></p>
 <div id="momhead" class="section level2">
-<h2>momhead</h2>
-<p><code>&lt;momhead-m&gt;</code></p>
+<h2>MomHead</h2>
+<p><code>&lt;MomHead-m&gt;</code></p>
 <div id="general-orientation" class="section level3">
 <h3>General Orientation</h3>
 <p>This code captures the times that the mom head or any part of the head is in the video frame. Times when the head is in view are scored as events, where the gray spaces between cells mean the head is out of view.</p>
@@ -1546,21 +1546,33 @@ div.tocify {
 <p>To set the Offset, use the same rules for mechanics as with the Onset. Hit #5-STOP and then hit “JUMP-BACK-BY” to go back to the timestamp that is just before the head exits the frame. Then JOG forward by hitting #3-JOGFORWARD until you reach the Offset of that cell. If you go too far, you can JOG backward by hitting #1-JOGBACK. You will likely have to hit the JOG keys numerous times. If you feel that you have either jumped too far back or went too far forward, hold the JOG keys to move in either direction a bit faster.</p>
 <p>Hit #9-SET-OFFSET to create the Offset</p>
 </div>
-<div id="create-momangle-column" class="section level3">
-<h3>Create momangle column</h3>
-<p>select the first block in the MomHead column select snap region - this will allow you to code in the MomAngle column just during the MomHead sections</p>
-<p>For the first cell in the column - Highlight the ‘MomAngle’ heading - create a new cell by pressing ‘Enter’ on the number pad</p>
+<div id="create-momfeature-column" class="section level3">
+<h3>Create MomFeature column</h3>
+<p>In the spreadsheet window</p>
 <ul>
-<li>code for <fso>, <ud></li>
-<li>press #3 to jog one frame</li>
-<li>press #0 to create new cell/set previous offset</li>
+<li>select spreadsheet &gt; temporal alignment (Command + t)</li>
+<li>select the first block in the MomHead column</li>
 </ul>
-<p>Contine the above process until the ‘Snap region’ section has been coded.</p>
+<p>In the Data Viewer Controller</p>
+<ul>
+<li>select snap region
+<ul>
+<li>this will allow you to code in the MomFeature column just during the MomHead sections</li>
+</ul></li>
+</ul>
+<p>In the spreadsheet window</p>
+<p>For the first cell in the column</p>
+<ul>
+<li>Highlight the ‘MomFeature’ heading<br />
+</li>
+<li>create a new cell by pressing ‘Enter’ on the number pad</li>
+</ul>
+<p>Contine the above process until the ‘Snap Region’ section has been coded.</p>
 </div>
 </div>
 <div id="babyhead" class="section level2">
-<h2>babyhead</h2>
-<p><code>&lt;babyhead-b&gt;</code></p>
+<h2>BabyHead</h2>
+<p><code>&lt;BabyHead-b&gt;</code></p>
 <div id="general-orientation-1" class="section level3">
 <h3>General Orientation</h3>
 <p>This code captures the times that the baby head or any part of the head is in the video frame.</p>
@@ -1577,121 +1589,105 @@ div.tocify {
 </div>
 <div id="how-to-code-1" class="section level3">
 <h3>How to Code</h3>
+<p>Quick coding of head in view.</p>
 <p>Set “JUMP-BACK-BY” key to 1 s.</p>
 <p>Enable cell highlighting on the controller.</p>
 <p>Watch in real time for the baby’s movement. As soon as you see baby’s head in the frame; hit #5-STOP and then hit “JUMP-BACK-BY” to go back to the timestamp that is just before the baby’s head appears in the frame.</p>
 <p>Hit ENTER to create a new cell at this Onset.</p>
 <p>Now, watch in real time to see when the baby head is out of the frame. The Offset is when the baby head is out of the frame least 0.5 s</p>
 <p>To set the Offset, use the same rules for mechanics as with the Onset. Hit #5-STOP and then hit “JUMP-BACK-BY” to go back to the timestamp that is just before the head exits the frame. Then JOG forward by hitting #3-JOGFORWARD until you reach the Offset of that cell. If you go too far, you can JOG backward by hitting #1-JOGBACK. You will likely have to hit the JOG keys numerous times. If you feel that you have either jumped too far back or went too far forward, hold the JOG keys to move in either direction a bit faster.</p>
-<p>Hit ???? to create the Offset</p>
+<p>Hit #9-SET-OFFSET to create the Offset</p>
 </div>
-<div id="create-babyangle-column" class="section level3">
-<h3>Create babyangle column</h3>
-<p>run the ??? script to create a new column for babyangle</p>
+<div id="create-babyfeature-column" class="section level3">
+<h3>Create BabyFeature column</h3>
+<p>In the spreadsheet window</p>
+<ul>
+<li>select spreadsheet &gt; temporal alignment (Command + t)</li>
+<li>select the first block in the BabyHead column</li>
+</ul>
+<p>In the Data Viewer Controller</p>
+<ul>
+<li>select snap region
+<ul>
+<li>this will allow you to code in the BabyFeature column just during the BabyHead sections</li>
+</ul></li>
+</ul>
+<p>In the spreadsheet window</p>
+<ul>
+<li><p>For the first cell in the column</p>
+<ul>
+<li>Highlight the ‘BabyFeature’ heading<br />
+</li>
+<li>create a new cell by pressing ‘Enter’ on the number pad</li>
+</ul></li>
+</ul>
+<p>Contine the above process until the ‘Snap Region’ section has been coded.</p>
 </div>
 </div>
-<div id="momangle" class="section level2">
-<h2>momangle</h2>
-<p><code>&lt;momangle_f-s-o-u-d-b&gt;</code></p>
+<div id="momfeature" class="section level2">
+<h2>MomFeature</h2>
+<p><code>MomFeature(&lt;LE10&gt;,&lt;RE10&gt;,&lt;N10&gt;,&lt;M10&gt;)</code></p>
 <div id="general-orientation-2" class="section level3">
 <h3>General Orientation</h3>
-<p>This code captures the viewing angle of the face (front, side, oblique, up, down, back) of the mom.</p>
-<p>Coders are watching/tagging each of these events by marking onset/offset times for the duration of head angle.</p>
+<p>This code captures the facial features that are in view Eyes (left/right), Nose, Mouth. This includes partial features.</p>
+<p>Coders are tagging each of these events for each frame of video.</p>
 </div>
 <div id="value-list-2" class="section level3">
 <h3>Value List</h3>
-<p><a href="https://www.researchgate.net/figure/The-head-pose-rotation-angles-Yaw-is-the-rotation-around-the-Y-axis-Pitch-around-the_fig1_281587953" class="uri">https://www.researchgate.net/figure/The-head-pose-rotation-angles-Yaw-is-the-rotation-around-the-Y-axis-Pitch-around-the_fig1_281587953</a></p>
-<p>L/R values (rotation about y-axis - Yaw)</p>
-<p><code>f</code> = front</p>
-<p><code>s</code> = side profile</p>
-<p><code>o</code> = oblique</p>
-<p>U/D values (rotation about x-axis - Pitch)</p>
-<p><code>u</code> = up</p>
-<p><code>s</code> = straight on</p>
-<p><code>d</code> = down</p>
-<p><code>b</code> = back</p>
+<p>Facial Features</p>
+<p><code>&lt;LE10&gt;</code> Left Eye - from coder perspective<br />
+<code>&lt;RE10&gt;</code> Right Eye - from coder perspective<br />
+<code>&lt;N10&gt;</code> Nose<br />
+<code>&lt;M10&gt;</code> Mouth</p>
 </div>
 <div id="operational-definitions-2" class="section level3">
 <h3>Operational Definitions</h3>
-<p><code>&lt;f&gt;</code> Code “f” for a front view of the face, when mom or baby has 2 eyes, nose, mouth in view</p>
-<p><code>&lt;s&gt;</code> Code “s” for a side view of the face, when mom or baby shows one eye, profile of nose, one ear. 1 hemisphere of head.</p>
-<p><code>&lt;o&gt;</code> Code “o” for an oblique view of the face, when mom or baby has one ear (may be obscured by hair), one full eye, one partial eye (this is between side view and front view, ~3/4 face)</p>
-<p><code>&lt;u&gt;</code> Code “u” for looking up view of the face, when mom or baby shows the jaw line, underneath of nose, partial eyes</p>
-<p><code>&lt;d&gt;</code> Code “d” for looking down view of the face, when mom or baby shows forehead, hairline, eyebrows, bridge of nose, Maybe not whole nose</p>
-<p><code>&lt;b&gt;</code> Code “b” for back of head view, when mom or baby head is in the frame, but shows no facial features (eye, nose, lip) maybe ear only</p>
+<p><code>1</code> yes Feature is in frame<br />
+<code>0</code> no Feature is NOT in frame</p>
 </div>
 <div id="how-to-code-2" class="section level3">
 <h3>How to Code</h3>
-<p>Set “JUMP-BACK-BY” key to 1 s.</p>
-<p>Enable cell highlighting.</p>
-<p>Watch in real time for the mom’s movement.</p>
-<p>Watch mom’s head.</p>
+<ul>
+<li>code for <code>&lt;LE10&gt;</code>,<code>&lt;RE10&gt;</code>,<code>&lt;N10&gt;</code>,<code>&lt;M10&gt;</code>
+<ul>
+<li>enter value (1/0), tab repeat 4x</li>
+</ul></li>
+<li>press #3 to jog one frame</li>
+<li>press #0 to create new cell/set previous offset</li>
+</ul>
 </div>
 </div>
-<div id="babyangle" class="section level2">
-<h2>babyangle</h2>
-<p><code>&lt;babyangle_f-s-o-u-d-b&gt;</code></p>
+<div id="babyfeature" class="section level2">
+<h2>BabyFeature</h2>
+<p><code>BabyFeature(&lt;LE10&gt;,&lt;RE10&gt;,&lt;N10&gt;,&lt;M10&gt;)</code></p>
 <div id="general-orientation-3" class="section level3">
 <h3>General Orientation</h3>
-<p>This code captures the viewing angle of the face (front, side, oblique, up, down, back) of the baby.</p>
-<p>Coders are watching/tagging each of these events by marking onset/offset times for the duration of head angle.</p>
+<p>This code captures the facial features that are in view Eyes (left/right), Nose, Mouth. This includes partial features.</p>
+<p>Coders are tagging each of these events for each frame of video.</p>
 </div>
 <div id="value-list-3" class="section level3">
 <h3>Value List</h3>
-<p><code>f</code> = front</p>
-<p><code>s</code> = side profile</p>
-<p><code>o</code> = oblique</p>
-<p><code>u</code> = up</p>
-<p><code>d</code> = down</p>
-<p><code>b</code> = back</p>
+<p>Facial Features</p>
+<p><code>&lt;LE10&gt;</code> Left Eye - from coder perspective<br />
+<code>&lt;RE10&gt;</code> Right Eye - from coder perspective<br />
+<code>&lt;N10&gt;</code> Nose<br />
+<code>&lt;M10&gt;</code> Mouth</p>
 </div>
 <div id="operational-definitions-3" class="section level3">
 <h3>Operational Definitions</h3>
-<p><code>&lt;f&gt;</code> Code “f” for a front view of the face, when mom or baby has 2 eyes, nose, mouth in view</p>
-<p><code>&lt;s&gt;</code> Code “s” for a side view of the face, when mom or baby shows one eye, profile of nose, one ear. 1 hemisphere of head.</p>
-<p><code>&lt;o&gt;</code> Code “o” for an oblique view of the face, when mom or baby has one ear (may be obscured by hair), one full eye, one partial eye (this is between side view and front view, ~3/4 face)</p>
-<p><code>&lt;u&gt;</code> Code “u” for looking up view of the face, when mom or baby shows the jaw line, underneath of nose, partial eyes</p>
-<p><code>&lt;d&gt;</code> Code “d” for looking down view of the face, when mom or baby shows forehead, hairline, eyebrows, bridge of nose, Maybe not whole nose</p>
-<p><code>&lt;b&gt;</code> Code “b” for back of head view, when mom or baby head is in the frame, but shows no facial features (eye, nose, lip) maybe ear only</p>
+<p><code>1</code> yes Feature is in frame<br />
+<code>0</code> no Feature is NOT in frame</p>
 </div>
 <div id="how-to-code-3" class="section level3">
 <h3>How to Code</h3>
-<p>Set “JUMP-BACK-BY” key to 1 s.</p>
-<p>Enable cell highlighting.</p>
-<p>Watch in real time for the baby’s movement.</p>
-<p>Watch baby’s head.</p>
-</div>
-</div>
-</div>
-<div id="delete-from-here-to-end" class="section level1">
-<h1>Delete from here to end</h1>
-<p>Set “JUMP-BACK-BY” key to 1 s.</p>
-<p>Enable cell highlighting.</p>
-<p>Watch in real time for the baby’s movement.</p>
-<p>Watch baby’s feet and knees.</p>
-<p>As soon as you see baby’s foot/knee lift up off of the ground; hit #5-STOP and then hit “JUMP-BACK-BY” to go back to the timestamp that is just before the lift. Then JOG forward by hitting #3-JOGFORWARD until you reach the Onset of that cell. If you go too far, you can JOG backward by hitting #1-JOGBACK. You will likely have to hit the JOG keys numerous times. If you feel that you have either jumped too far back or went too far forward, hold the JOG keys to move in either direction a bit faster. Hit ENTER to create a new cell at this Onset.</p>
-<p>Now, watch in real time to see when the baby stops moving. The Offset is when the baby stops moving for at least 0.5 s (the pause has to look and feel like an actual pause when you are watching in real time; don’t simply end a bout of locomotion because there was a 0.5-s pause, especially if it looks like the baby is about to take another step). The first frame when the foot/knee stops moving or when the foot settles into its final position (sometimes infants stop their walking bout on their tip-toes) is the offset. The same applies to sliding steps.</p>
-<p>To set the Offset, use the same rules for mechanics as with the onset. Hit #5-STOP and then hit “JUMP-BACK-BY” to go back to the timestamp that is just before the lift. Then JOG forward by hitting #3-JOGFORWARD until you reach the Offset of that cell. If you go to far, you can JOG backward by hitting #1-JOGBACK. You will likely have to hit the JOG keys numerous times. If you feel that you have either jumped too far back or went too far forward, hold the JOG buttons to move in either direction a bit faster.</p>
-<div id="delete-from-here-down" class="section level2">
-<h2>Delete from here down</h2>
-<p><code>&lt;babyhead_b&gt;</code></p>
-<div id="general-orientation-4" class="section level3">
-<h3>General Orientation</h3>
-<p>This code captures the times that mom is engaged in locomotion or fell.</p>
-<p>Bouts of locomotion are scored as events, where the gray spaces between cells mean the mom is stationary.</p>
-<p>Coders are watching/tagging each of these events by marking onset/offset times for the duration of locomotion bouts</p>
-<p>Coders are watching for steps with the feet, the knees, or the bum. Any other movements that are not initiated from these three body locations is considered to be a transition between postures and is subsumed by stationary, as it is not locomotion.</p>
-<p>Bouts that are coded as “.” means that mom is off camera or her legs are off camera, and coder cannot see or infer whether mom is stationary or moving.</p>
-</div>
-<div id="how-to-code-4" class="section level3">
-<h3>How to Code</h3>
-<p>Set “JUMP-BACK-BY” key to 1 s.</p>
-<p>Enable cell highlighting on the controller.</p>
-<p>Watch in real time for the mom’s movement.</p>
-<p>Watch for the feet and knees.</p>
-<p>As soon as you see mom’s foot/knee lift up off of the ground; hit #5-STOP and then hit “JUMP-BACK-BY” to go back to the timestamp that is just before the lift. Then JOG forward by hitting #3-JOGFORWARD until you reach the onset of that cell. If you go too far, you can JOG backward by hitting #1-JOGBACK. If you feel that you have either jumped too far back or went too far forward, hold the JOG keys to move in either direction a bit faster. Hit ENTER to create a new cell at this Onset.</p>
-<p>Now, watch in real time to see when the mom stops moving. The Offset is when the mom stops moving for at least 0.5 s (the pause has to look and feel like an actual pause when you are watching in real time; don’t simply end a bout of locomotion because there was a 0.5-s pause, especially if it looks like the mom is about to take another step). The first frame when the foot/knee stops moving or when the foot settles into its final position is the offset. The same applies to sliding steps.</p>
-<p>To set the Offset, use the same rules for mechanics as with the Onset. Hit #5-STOP and then hit “JUMP-BACK-BY” to go back to the timestamp that is just before the lift. Then JOG forward by hitting #3-JOGFORWARD until you reach the Offset of that cell. If you go too far, you can JOG backward by hitting #1-JOGBACK. You will likely have to hit the JOG keys numerous times. If you feel that you have either jumped too far back or went too far forward, hold the JOG keys to move in either direction a bit faster.</p>
+<ul>
+<li>code for <code>&lt;LE10&gt;</code>,<code>&lt;RE10&gt;</code>,<code>&lt;N10&gt;</code>,<code>&lt;M10&gt;</code>
+<ul>
+<li>enter value (1/0), tab repeat 4x</li>
+</ul></li>
+<li>press #3 to jog one frame</li>
+<li>press #0 to create new cell/set previous offset</li>
+</ul>
 </div>
 </div>
 </div>
